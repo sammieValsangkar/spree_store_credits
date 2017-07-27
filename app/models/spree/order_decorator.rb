@@ -59,7 +59,7 @@ Spree::Order.class_eval do
 
     # recalc totals and ensure payment is set to new amount
     update_totals
-    unprocessed_payments.first.update_column(:amount, total) if unprocessed_payments.first
+    unprocessed_payments.first.update_attribute(:amount, total) if unprocessed_payments.first
   end
 
   def consume_users_credit
